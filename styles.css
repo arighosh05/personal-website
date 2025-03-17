@@ -367,7 +367,6 @@ figure:has(img) {
     }
 }
 
-
 /* Responsive Design for Tablet Devices (481px - 1024px) */
 @media (max-width: 1024px) and (min-width: 481px) {
     .hero-section h1 {
