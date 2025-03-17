@@ -118,7 +118,6 @@ nav ul li a {
     border-radius: 50%;
     animation: fadeInProfile 0.8s ease-in-out 0.8s forwards;
     position: relative;
-    border-radius: 4px;
 }
 
 .hero-section h1 {
