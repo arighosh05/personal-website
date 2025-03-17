@@ -1,0 +1,430 @@
+/* CSS Variables with improved fallbacks for Dark Theme */
+:root {
+    --primary-color: color(display-p3 1 1 1);
+    --secondary-color: color-mix(in oklab, black, white 10%);
+    --accent-color: color(display-p3 0.8 0.9 1);
+    --font-primary: 'Poppins', Arial, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-large: 3.5rem;
+    --nav-font-size: 1.2rem;
+    --background-color: #000000;
+    --text-color: #e0e0e0;
+    --link-color: #ffffff;
+    --link-hover-color: color-mix(in srgb, var(--link-color), #80d8ff 70%);
+}
+
+/* Custom Font with Fallback */
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.woff2') format('woff2'),
+         url('Poppins-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+body {
+    font-family: var(--font-primary, sans-serif);
+    font-size: var(--font-size-base, 16px);
+    color: var(--text-color, #e0e0e0);
+    background-color: var(--background-color, #121212);
+    margin: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Enhanced Link Styles */
+a {
+    color: var(--link-color, #ffffff);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--link-hover-color, #80d8ff);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--link-hover-color, #80d8ff);
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Exception for navigation links - keeping them cleaner */
+nav a::after {
+    height: 2px;
+    bottom: -4px;
+}
+
+/* Exception for header title links - no underline effect */
+header h1 a::after {
+    display: none;
+}
+
+/* Navigation improvements */
+nav {
+    padding: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    font-size: var(--nav-font-size, 1.2rem);
+}
+
+/* Centered hero section for home page */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80dvh;
+    position: relative;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0;
+    border-radius: 50%;
+    animation: fadeInProfile 0.8s ease-in-out 0.8s forwards;
+    position: relative;
+    border-radius: 4px;
+}
+
+.hero-section h1 {
+    font-size: var(--font-size-large, 3.5rem);
+    margin-bottom: 0.5rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Wave emoji animation */
+.wave-emoji {
+    display: inline-block;
+    animation: wave 2s ease-in-out 1s;
+    transform-origin: 70% 70%;
+    cursor: pointer;
+}
+
+.wave-emoji:hover {
+    animation: wave 2s ease-in-out infinite;
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Social links at bottom */
+.social-links {
+    margin-top: auto;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.social-links a {
+    margin: 0 1rem;
+}
+
+/* Gallery Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Style images within the gallery */
+.gallery-grid img {
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+/* Gallery introduction text */
+.gallery-intro {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* Projects and Thoughts Layout */
+.content-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.content-list h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.content-list nav {
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid var(--text-color);  /* Creates the bounding box */
+    padding: 2rem;
+    border-radius: 8px;  /* adds slight rounding to the box corners */
+}
+
+.content-list ol {
+    list-style-position: inside;
+    padding: 0;
+    margin: 0;
+    text-align: center;  /* Centers the text */
+}
+
+.content-list ol li {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.content-list ol li a {
+    color: var(--text-color);
+    transition: color 0.3s ease-in-out;
+}
+
+.content-list ol li a:hover {
+    color: var(--link-hover-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInProfile {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.profile-glow {
+    position: absolute;
+    width: 300px;  
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--link-hover-color, #80d8ff) 10%, rgba(128, 216, 255, 0.4) 40%, rgba(0, 0, 0, 0) 70%);
+    opacity: 0;
+    z-index: 1;
+    filter: blur(20px);  /* Increased blur for softer edges */
+    animation: glowFadeIn 1.2s ease-in-out 1s forwards, glowPulse 4s ease-in-out 2.2s infinite;
+}
+
+/* animation for glow effect */
+@keyframes glowFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 0.9;  /* Increased opacity */
+        transform: scale(1);
+    }
+}
+
+/*animation for pulse */
+@keyframes glowPulse {
+    0% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;  /* Full opacity at peak */
+        transform: scale(1.1);  /* Larger scale change */
+    }
+    100% {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+}
+
+/* Container for proper positioning */
+.profile-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    .profile-glow {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-glow {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: calc(var(--font-size-large) * 0.7);
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+/* Using :has() selector for improved gallery images */
+figure:has(img) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Scoped styling for gallery images (ensuring full width and proper shadows) */
+@scope (.gallery-grid) {
+    img {
+        width: 100%;
+        height: auto;
+        box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    }
+}
+
+
+/* Responsive Design for Tablet Devices (481px - 1024px) */
+@media (max-width: 1024px) and (min-width: 481px) {
+    .hero-section h1 {
+        font-size: calc(var(--font-size-large) * 0.85);
+    }
+    nav ul {
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+    .profile-image {
+        width: 170px;
+        height: 170px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* Responsive Design for Phone Devices (up to 480px) */
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: calc(var(--font-size-large) * 0.7);
+    }
+    nav {
+        position: relative;
+    }
+    /* Show hamburger icon and hide navigation list by default */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 2rem;
+        color: var(--link-color);
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 1000;
+    }
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: var(--background-color);
+        padding: 1rem;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    /* Reveal nav menu when toggle is active */
+    #menu-toggle:checked ~ ul {
+        display: flex;
+    }
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
