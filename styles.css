@@ -533,3 +533,11 @@ figure:has(img) {
     display: inline-block;
     margin-top: 2rem;
 }
+
+.underlined-link {
+    text-decoration: underline !important;
+}
+
+.underlined-link::after {
+    display: none !important; /* prevents the ::after pseudo-element underline animation */
+}
