@@ -203,7 +203,6 @@ nav ul li a {
     margin: 1rem 0;
 }
 
-/* Projects and Thoughts Layout */
 .content-list {
     display: flex;
     flex-direction: column;
@@ -216,35 +215,36 @@ nav ul li a {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: var(--text-color);
-    text-align: left;
+    text-align: center;
 }
 
 .content-list nav {
     width: 90%;
     max-width: 600px;
-    border: none;
+    border: 1px solid var(--text-color);  /* Creates the bounding box */
     padding: 2rem;
+    border-radius: 8px;  /* Optional: adds slight rounding to the box corners */
 }
 
-.content-list ul {
+.content-list ol {
     list-style-position: inside;
     padding: 0;
     margin: 0;
-    text-align: left; 
+    text-align: center;  /* Centers the text */
 }
 
-.content-list ul li {
+.content-list ol li {
     margin: 1rem 0;
     font-size: 1.2rem;
     color: var(--text-color);
 }
 
-.content-list ul li a {
+.content-list ol li a {
     color: var(--text-color);
     transition: color 0.3s ease-in-out;
 }
 
-.content-list ul li a:hover {
+.content-list ol li a:hover {
     color: var(--link-hover-color);
 }
 
