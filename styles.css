@@ -216,22 +216,21 @@ nav ul li a {
     font-size: 2rem;
     margin-bottom: 2rem;
     color: var(--text-color);
-    text-align: center;
+    text-align: left;
 }
 
 .content-list nav {
     width: 90%;
     max-width: 600px;
-    border: 1px solid var(--text-color);  /* Creates the bounding box */
+    border: none;
     padding: 2rem;
-    border-radius: 8px;  /* Optional: adds slight rounding to the box corners */
 }
 
 .content-list ol {
     list-style-position: inside;
     padding: 0;
     margin: 0;
-    text-align: center;  /* Centers the text */
+    text-align: left; 
 }
 
 .content-list ol li {
