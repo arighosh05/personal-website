@@ -27,11 +27,11 @@
         </header>
         
         <div class="post-content">
-            <p>this past weekend, i built prompt silo, a private prompt management system. in this blog, i offer an argument for why we need private prompts. for more details on the project, check out the README.md on the project repository.</p>
+            <p>this past weekend, i built prompt silo, a private prompt management system. in this blog, i offer an argument for why we need private prompts. for more details on the project, check out the  <a href="https://github.com/arighosh05/prompt-silo/blob/master/README.md" class="underlined-link">README.md</a> in the project repository.</p>
             
             <p>language models are inherently non-deterministic. this means that even if you input the same prompt multiple times, the outputs can differ due to randomness in the sampling process. parameters like temperature influence this randomness, controlling whether the model leans toward conservative or creative responses. while this variability fuels creativity, it also introduces uncertainty: the quality of the output isn’t guaranteed by the prompt alone.</p>
             
-            <p>now, prompt engineering (or rather prompt design), which is the process of structuring or crafting an instruction in order to produce the best possible output from an ai model, is rooted in the belief that not all prompts are created equal. indeed, a well-crafted prompt can increase the likelihood of generating high-quality outputs compared to a poorly designed one.</p>
+            <p>now, prompt engineering (or rather <a href="https://arvid.xyz/posts/prompt-design/" class="underlined-link">prompt design</a>), which is the practice of structuring a prompt in order to produce the best possible output from an ai model, is fundamentally rooted in the belief that not all prompts are created equal. indeed, a well-crafted prompt can increase the likelihood of generating high-quality outputs compared to a poorly designed one.</p>
             
             <p>to quantify the advantage of superior prompts, consider the following back-of-the-envelope calculations:</p>
             
@@ -51,7 +51,7 @@
           
             <ul>
               <li>standard prompt: 1/0.7 = 1.43 attempts = $0.0143 per usable output</li>
-              <li>optimized prompt chain (3 steps): 0.85³ = 0.614 (61.4% chance)</li>
+              <li>optimized prompt: 1/0.85 = 1.18 attempts = $0.0118 per usable output</li>
             </ul>
 
             <p>this means that at scale (1M generations): $14,300 vs $11,800 = $2,500 saved!</p>
@@ -76,7 +76,7 @@
           
         </div>
         
-        <a href="thoughts.html" class="return-link">← back to all thoughts</a>
+        <a href="projects.html" class="return-link">← back to all projects</a>
     </article>
     
     <main class="social-links">
