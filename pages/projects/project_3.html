@@ -50,7 +50,7 @@
 
             <ul>
               <li>tool calling: bunch of functions that the agent can call to perform static code analysis</li>
-              <li>retrieval augmented generation (rag) : bunch of documentation that the agent can refer in order to make contextualized analysis</li>
+              <li>rag : bunch of documentation that the agent can refer in order to make contextualized analysis</li>
             </ul>
 
             <p>for the second task, i.e. generating improved code, we’d like to adopt a planner-executor workflow. the motivation behind doing so is that our planner will generate an action plan based on the input code and context, the generated code review, and any additional human input, after which, the executor will generate the code based on the action plan. for our purposed, we can stick to vanilla llm calls for this part.</p>
