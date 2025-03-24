@@ -225,25 +225,25 @@ nav ul li a {
     padding: 2rem;
 }
 
-.content-list ol {
+.content-list ul {
     list-style-position: inside;
     padding: 0;
     margin: 0;
     text-align: left;
 }
 
-.content-list ol li {
+.content-list ul li {
     margin: 1rem 0;
     font-size: 1.2rem;
     color: var(--text-color);
 }
 
-.content-list ol li a {
+.content-list ul li a {
     color: var(--text-color);
     transition: color 0.3s ease-in-out;
 }
 
-.content-list ol li a:hover {
+.content-list ul li a:hover {
     color: var(--link-hover-color);
 }
 
