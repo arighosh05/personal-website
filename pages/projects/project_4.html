@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Aritra Ghosh">
+    <meta property="og:title" content="the ethics of web crawling">
+    <meta property="og:description" content="my insights on the ethics of web crawling after building a differentially private web crawler">
+    <meta property="og:type" content="article">
+    <title>the ethics of web crawling</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../../index.html">home</a></li>
+            <li><a href="projects.html">projects</a></li>
+            <li><a href="../thoughts/thoughts.html">thoughts</a></li>
+            <li><a href="../gallery.html">gallery</a></li>
+            <li><a href="../../resume.pdf" target = "_blank">resume</a></li>
+        </ul>
+    </nav>
+
+    <article class="post-container">
+        <header class="post-header">
+            <h1 class="post-title">the ethics of web crawling 🕸️</h1>
+            <p class="post-date">March 14, 2025</p>
+        </header>
+        
+        <div class="post-content">
+            <p>i recently built a <a href="https://github.com/arighosh05/web-crawler" class="underlined-link">web crawler. in this short blog, i’ll step through what motivated me to build the crawler and the reflections it sparked after its completion.</p>
+
+            <p>web crawling is an incredible tool. it powers everything from search engines to research datasets, unlocking insights from the vast expanse of the internet. but as I dug into it, i couldn’t shake the unease that came with the territory. crawling often involves scooping up data—sometimes personal or sensitive—without explicit consent. even if the data is “public,” aggregating and analyzing it can reveal things people never meant to expose. that tension between the utility of data and the right to privacy is what pushed me to create something different: a crawler that could still deliver value without crossing ethical lines.</p>
+                      
+            <p>my solution was to integrate <strong>differential privacy</strong>, a technique that adds noise to data to protect individuals while keeping the aggregate insights intact. alongside that, i integrated a text transformation system using semantic preservation algorithms and statistical resampling to obscure sensitive details without losing meaning. i also added a configurable privacy budget, letting users decide how much privacy they’re willing to trade for accuracy, and a parallel processing system to make it efficient enough to handle multiple web sources at once.</p>
+          
+            <p>building the crawler hammered home a key lesson: privacy can’t be an afterthought. traditional crawlers might prioritize speed or data volume, but I’ve come to see that protecting individuals is non-negotiable. my system ensures that even if someone’s data gets swept up, it’s nearly impossible to pinpoint them in the output. that feels like a step toward responsibility in a field that’s often too cavalier about personal boundaries.</p>
+
+            <p>this web crawler is my attempt to prove that we can collect data responsibly. it’s not perfect, and it doesn’t solve every problem, but it’s a start. for me, the takeaway is simple: we can’t just ask <em>what</em> we can do with data—we have to ask <em>should</em> we? if this project gets even one person thinking about that, I’ll call it a win.</p>
+        
+            <div class="post-footer">
+            </div>
+          
+        </div>
+        
+        <a href="projects.html" class="return-link">← back to all projects</a>
+    </article>
+    
+    <main class="social-links">
+        <p>
+          <a href="mailto:aritraghosh534@gmail.com">email</a>
+          <a href="https://www.linkedin.com/in/ghosh-aritra/">linkedin</a>
+          <a href="https://github.com/arighosh05">github</a></p>
+    </main>
+</body>
+</html>
