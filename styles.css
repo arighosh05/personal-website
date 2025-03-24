@@ -226,7 +226,9 @@ nav ul li a {
 }
 
 .content-list ul {
-    list-style-position: inside;
+    display: block;          /* Overrides display: flex; to stack items vertically */
+    list-style-type: disc;   /* Adds bullet points */
+    list-style-position: inside; /* Keeps bullets inside the list item content */
     padding: 0;
     margin: 0;
     text-align: left;
