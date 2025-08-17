@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Aritra Ghosh">
-    <meta property="og:title" content="home">
-    <meta property="og:description" content="personal website">
-    <title>home</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>flux</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .center-content {
+      text-align: center;
+    }
+
+    img {
+      max-width: 450px; 
+      height: auto;
+    }
+
+    .caption {
+      margin-top: 12px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .info-section {
+      margin-top: 50px;
+      font-size: 14px;
+      color: #666;
+    }
+
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">home</a></li>
-            <li><a href="pages/projects/projects.html">projects</a></li>
-            <li><a href="pages/thoughts/thoughts.html">thoughts</a></li>
-            <li><a href="pages/gallery.html">gallery</a></li>
-            <li><a href="resume.pdf" target = "_blank">resume</a></li>
-        </ul>
-    </nav>
-    <header class="hero-section">
-        <div class="profile-container">
-            <div class="profile-glow"></div>
-            <img src="img/my-profile-picture.png" alt="Aritra Ghosh" class="profile-image">
-        </div>
-        <h1>hi, i'm aritra <span class="wave-emoji">👋</span></h1>
-        <p>big problems inspire me :)</p>
-    </header>
-    <main class="social-links">
-        <p>
-            <a href="mailto:aritraghosh534@gmail.com">email</a>
-            <a href="https://www.linkedin.com/in/ghosh-aritra/">linkedin</a>
-            <a href="https://github.com/arighosh05">github</a>
-        </p>
-    </main>
+  <div class="center-content">
+    <img src="img/gallery_img_1.JPG" alt="image">
+    <div class="caption">πάντα ῥεῖ</div>
+  </div>
+
+  <div class="info-section">
+    <span>Last Updated: Aug 2025</span>
+  </div>
 </body>
 </html>
